@@ -73,3 +73,8 @@ Key concepts demonstrated:
 - Real-time data visualisation with Java2D
 - Event-driven GUI programming (Swing, Timer, Listeners)
 
+## Screenshots 
+<img width="1437" height="799" alt="Bildschirmfoto 2026-06-15 um 13 04 32" src="https://github.com/user-attachments/assets/1c0d5c14-b0d4-4432-be6b-f812b8ad05c9" />
+
+<img width="1437" height="799" alt="Bildschirmfoto 2026-06-15 um 13 05 31" src="https://github.com/user-attachments/assets/a1b92029-d5e9-47a0-ae01-da85bd59ad7b" />
+
