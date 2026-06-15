@@ -59,7 +59,7 @@ public class Main {
     private void createAndShowUI() {
         initializePopulation();
 
-        JFrame frame = new JFrame("SIR Simulation - Bewegte Personen");
+        JFrame frame = new JFrame("SIR Simulation - Moving People");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout(8, 8));
 
@@ -86,10 +86,10 @@ public class Main {
         controlsPanel.add(stopButton);
 
         JPanel slidersPanel = new JPanel(new GridLayout(2, 4, 8, 4));
-        slidersPanel.add(buildSliderControl("Geschwindigkeit", speedSlider, speedValueLabel));
-        slidersPanel.add(buildSliderControl("Ansteckung %", transmissionSlider, transmissionValueLabel));
-        slidersPanel.add(buildSliderControl("Infektioes (min)", infectiousSlider, infectiousValueLabel));
-        slidersPanel.add(buildSliderControl("Immun (min)", immunitySlider, immunityValueLabel));
+        slidersPanel.add(buildSliderControl("Rate", speedSlider, speedValueLabel));
+        slidersPanel.add(buildSliderControl("Infection %", transmissionSlider, transmissionValueLabel));
+        slidersPanel.add(buildSliderControl("Infectious (min)", infectiousSlider, infectiousValueLabel));
+        slidersPanel.add(buildSliderControl("Immunity (min)", immunitySlider, immunityValueLabel));
 
         JPanel southPanel = new JPanel(new BorderLayout(0, 4));
         southPanel.add(controlsPanel, BorderLayout.NORTH);
@@ -228,11 +228,11 @@ public class Main {
         int recovered = countByState(Person.State.RECOVERED);
 
         statusLabel.setText(
-            "Zeit: " + simulatedMinutes + " min"
-                + " | Neu infiziert: " + newlyInfected
-                + " | Ansteckung: " + (int) Math.round(transmissionProbability * 100) + "%"
-                + " | Infektioes: " + infectiousDurationMinutes + " min"
-                + " | Immun: " + immunityDurationMinutes + " min"
+            "Time: " + simulatedMinutes + " min"
+                + " | new Infected: " + newlyInfected
+                + " | Infection: " + (int) Math.round(transmissionProbability * 100) + "%"
+                + " | Infectious: " + infectiousDurationMinutes + " min"
+                + " | Immunity: " + immunityDurationMinutes + " min"
                 + " | S=" + susceptible + " I=" + infectious + " R=" + recovered
         );
     }
@@ -318,8 +318,8 @@ public class Main {
 
             g.setColor(Color.BLACK);
             g.drawRect(left, top, chartWidth, chartHeight);
-            g.drawString("Personen", 8, top + 5);
-            g.drawString("Zeit (min)", left + chartWidth - 55, getHeight() - 10);
+            g.drawString("Persons", 8, top + 5);
+            g.drawString("Time (min)", left + chartWidth - 55, getHeight() - 10);
 
             drawSeries(g, susceptibleHistory, new Color(0, 120, 255), left, top, chartWidth, chartHeight);
             drawSeries(g, infectiousHistory, new Color(220, 30, 30), left, top, chartWidth, chartHeight);
